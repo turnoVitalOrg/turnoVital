@@ -26,7 +26,7 @@
     "fullyQualifiedName": "utils.topOrderedProductsChart",
     "name": "topOrderedProductsChart",
     "pageId": "Dashboard",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

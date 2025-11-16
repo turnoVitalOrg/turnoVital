@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "68fc13c2d7e1a24929454f2f_ebd5c9b1-0dd3-4cb0-bbbc-f895a53a4665",
-  "id": "Registrar turno (admin)_mostrarTurnos2",
+  "gitSyncId": "68fc13c2d7e1a24929454f2f_b6ee84e9-fc4e-4257-8559-2425c762270a",
+  "id": "Dashboard_totalEspecialidades",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -24,16 +24,12 @@
         {
           "key": "Content-Type",
           "value": "application/json"
-        },
-        {
-          "key": "Prefer",
-          "value": "return=representation"
         }
       ],
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "/rest/v1/vista_agenda",
+      "path": "/rest/v1/vista_total_especialidades",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -41,8 +37,8 @@
       ],
       "queryParameters": [
         {
-          "key": "profesional_id",
-          "value": "eq.{{this.params.id}}"
+          "key": "select",
+          "value": "*"
         }
       ],
       "timeoutInMillisecond": 10000
@@ -57,17 +53,11 @@
     "dynamicBindingPathList": [
       {
         "key": "headers[1].value"
-      },
-      {
-        "key": "path"
-      },
-      {
-        "key": "queryParameters[0].value"
       }
     ],
-    "name": "mostrarTurnos2",
-    "pageId": "Registrar turno (admin)",
-    "runBehaviour": "MANUAL",
+    "name": "totalEspecialidades",
+    "pageId": "Dashboard",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

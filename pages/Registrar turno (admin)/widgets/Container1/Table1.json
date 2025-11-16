@@ -32,17 +32,17 @@
     }
   },
   "columnOrder": [
-    "profesional_id",
-    "profesional_nombre",
-    "hora",
     "fecha",
+    "hora",
+    "profesional_nombre",
+    "profesional_id",
     "paciente_id",
     "turno_id",
     "paciente_nombre",
     "profesional_matricula",
     "profesional_especialidad"
   ],
-  "columnUpdatedAt": 1763261452477,
+  "columnUpdatedAt": 1763268537555,
   "columnWidthMap": {
     "paciente_nombre": 254,
     "profesional_matricula": 187,
@@ -392,7 +392,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Profesional",
       "notation": "standard",
       "originalId": "profesional_nombre",

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 4,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -20,33 +20,32 @@
   "fontSize": "1.875rem",
   "fontStyle": "BOLD",
   "hideCard": false,
-  "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
+  "iconSVG": "/static/media/icon.97c59b52.svg",
   "isDeprecated": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "s8ew0jemrb",
-  "leftColumn": 2,
+  "key": "xx7obgmjct",
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "overflow": "NONE",
-  "parentColumnSpace": 4.234375,
-  "parentId": "9cskg5v2ka",
+  "parentColumnSpace": 0.703125,
+  "parentId": "5hwvwgguzr",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 62,
+  "rightColumn": 64,
   "searchTags": [
     "typography",
-    "paragraph",
-    "label"
+    "paragraph"
   ],
   "shouldTruncate": false,
-  "text": "{{totalTurnosHoy.data[0]?.total_turnos_hoy ?? 0}}",
-  "textAlign": "LEFT",
-  "textColor": "#fff9f0",
-  "topRow": 9,
+  "text": "{{totalPacientes.data[0]?.total_pacientes ?? 0}}",
+  "textAlign": "CENTER",
+  "textColor": "#00477f",
+  "topRow": 0,
   "truncateButtonColor": "#FFC13D",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "dxxlga6bxt",
-  "widgetName": "txt_miniSidebarValue"
+  "widgetId": "r6d3gczbr9",
+  "widgetName": "txt_cancelledCount"
 }

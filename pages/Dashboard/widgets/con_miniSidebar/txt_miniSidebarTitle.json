@@ -34,7 +34,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Total turnos",
+  "text": "Total turnos hoy",
   "textAlign": "LEFT",
   "textColor": "#fff9f0",
   "topRow": 3,
