@@ -30,7 +30,7 @@ export default {
 			this.persona = persona
 
 			mostrarAgenda.run({id: profId})
-			mostrarTurnos.run({id: profId})
+			mostrarTurnos2.run({id: profId})
 		} catch (e) {
 			showAlert(`Error cargando datos: ${e.message}`, "error");
 			throw e;
