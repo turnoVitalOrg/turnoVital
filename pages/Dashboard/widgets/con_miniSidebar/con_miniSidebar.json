@@ -4,7 +4,7 @@
   "borderColor": "transparent",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 71,
+  "bottomRow": 70,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "children": [
     {
@@ -62,8 +62,8 @@
   "leftColumn": 40,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 72,
-  "originalTopRow": 27,
+  "originalBottomRow": 70,
+  "originalTopRow": 26,
   "parentColumnSpace": 18.1875,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -75,7 +75,7 @@
     "group"
   ],
   "shouldScrollContents": true,
-  "topRow": 27,
+  "topRow": 26,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "lv6z250pkc",

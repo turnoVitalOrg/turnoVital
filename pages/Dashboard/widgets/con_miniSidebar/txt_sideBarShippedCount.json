@@ -45,7 +45,7 @@
     "label"
   ],
   "shouldTruncate": false,
-  "text": "{{utils.dashboardMetrics.data.shippedOrders}}",
+  "text": "{{totalTurnosHoyAsistido.data[0]?.total_turnos_hoy_asistieron ?? 0}}",
   "textAlign": "CENTER",
   "textColor": "#fff9f0",
   "topRow": 36,
