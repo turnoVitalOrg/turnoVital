@@ -3,7 +3,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 12,
-  "bottomRowBeforeCollapse": 8,
+  "bottomRowBeforeCollapse": 12,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( configurarAgenda.lunesData[0].hora_inicio ?? '08:00'))(lunesHoraInicio.options, lunesHoraInicio.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -67,7 +67,7 @@
   "serverSideFiltering": false,
   "sourceData": "{{ utilsHorarios.generarHorarios() }}\n",
   "topRow": 8,
-  "topRowBeforeCollapse": 4,
+  "topRowBeforeCollapse": 8,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "60s5m8ajit",

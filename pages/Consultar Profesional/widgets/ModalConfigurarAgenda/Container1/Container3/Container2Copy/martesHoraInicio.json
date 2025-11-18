@@ -3,7 +3,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 13,
-  "bottomRowBeforeCollapse": 9,
+  "bottomRowBeforeCollapse": 13,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( configurarAgenda.martesData[0].hora_inicio ?? '08:00'))(martesHoraInicio.options, martesHoraInicio.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -67,7 +67,7 @@
   "serverSideFiltering": false,
   "sourceData": "{{ utilsHorarios.generarHorarios() }}\n",
   "topRow": 9,
-  "topRowBeforeCollapse": 5,
+  "topRowBeforeCollapse": 9,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "deutpauz2d",

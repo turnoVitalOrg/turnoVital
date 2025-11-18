@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "691c8171ad843618031cfbe5_54c86377-046c-4a04-bc41-d405051b8d69",
+  "id": "Consultar Profesional_configurarAgendaTotal",
+  "unpublishedCollection": {
+    "name": "configurarAgendaTotal",
+    "pageId": "Consultar Profesional",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

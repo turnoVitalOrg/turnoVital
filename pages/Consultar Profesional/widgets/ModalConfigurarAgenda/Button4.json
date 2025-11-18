@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 113,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "true",
+  "key": "d2i6pw6plz",
+  "leftColumn": 19,
+  "minWidth": 120,
+  "mobileBottomRow": 113,
+  "mobileLeftColumn": 19,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 109,
+  "needsErrorInfo": false,
+  "onClick": "{{configurarAgendaTotal.GuardarTodo();}}",
+  "originalBottomRow": 113,
+  "originalTopRow": 109,
+  "parentColumnSpace": 10.1875,
+  "parentId": "h54y1dh5cw",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 35,
+  "text": "Guardar todo",
+  "topRow": 109,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "f18yrumh5d",
+  "widgetName": "Button4"
+}
