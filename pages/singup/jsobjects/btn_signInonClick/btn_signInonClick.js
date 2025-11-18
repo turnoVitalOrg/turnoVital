@@ -10,7 +10,7 @@ export default {
 			storeValue("user_id", authLogin.data.user.id);
 			
 
-			// Redirige al dashboard
+			//Redirige al dashboard
 			//navigateTo("Dashboard");
 		} catch (e) {
 			showAlert("Credenciales inválidas", "error");

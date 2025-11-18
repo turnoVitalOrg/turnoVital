@@ -8,7 +8,7 @@
   "chartData": {
     "1k03vaz39u": {
       "data": "{{turnosPorMes.data.map( (obj) =>{ return  {'x': obj.month, 'y': obj.total_turnos } })}}",
-      "seriesName": "Sales"
+      "seriesName": "Turnos"
     }
   },
   "chartName": "Total turno por mes",
