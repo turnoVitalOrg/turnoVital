@@ -1,0 +1,6 @@
+{{
+{
+	p_profesional_id: this.params.profesionalId,
+	p_agendas: this.params.agenda
+}
+}}

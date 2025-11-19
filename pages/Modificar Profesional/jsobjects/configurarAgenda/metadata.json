@@ -1,24 +1,12 @@
 {
-  "gitSyncId": "68d716f52765f94fabd3777f_cfde5a6e-abaa-4348-ba13-420e13a33fdd",
-  "id": "Modificar Profesional_loadInitialData",
+  "gitSyncId": "68fc13c2d7e1a24929454f2f_a4fef63a-b91f-4b1b-879b-05dac5b8d61f",
+  "id": "Modificar Profesional_configurarAgenda",
   "unpublishedCollection": {
-    "name": "loadInitialData",
+    "name": "configurarAgenda",
     "pageId": "Modificar Profesional",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "variables": [
-      {
-        "name": "profesional",
-        "value": "{}"
-      },
-      {
-        "name": "persona",
-        "value": "{}"
-      },
-      {
-        "name": "domicilio",
-        "value": "{}"
-      },
       {
         "name": "agenda",
         "value": "[]"
@@ -26,6 +14,10 @@
       {
         "name": "dias",
         "value": "[{\n  value: \"lunes\",\n  label: \"Lunes\"\n}, {\n  value: \"martes\",\n  label: \"Martes\"\n}, {\n  value: \"miercoles\",\n  label: \"Miercoles\"\n}, {\n  value: \"jueves\",\n  label: \"Jueves\"\n}, {\n  value: \"viernes\",\n  label: \"Viernes\"\n}, {\n  value: \"sabado\",\n  label: \"Sabado\"\n}, {\n  value: \"domingo\",\n  label: \"Domingo\"\n}]"
+      },
+      {
+        "name": "hayCambios",
+        "value": "false"
       }
     ]
   }

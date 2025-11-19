@@ -2,6 +2,16 @@ export default {
 	profesional: {},
 	persona: {},
 	domicilio: {},
+	agenda: [],
+	dias: [
+		{value: "lunes", label: "Lunes"},
+		{value: "martes", label: "Martes"},
+		{value: "miercoles", label: "Miercoles"},
+		{value: "jueves", label: "Jueves"},
+		{value: "viernes", label: "Viernes"},
+		{value: "sabado", label: "Sabado"},
+		{value: "domingo", label: "Domingo"},
+	],
 	async loadInitialData() {
 
 		try {
@@ -43,8 +53,11 @@ export default {
 			}
 			this.domicilio = domicilio
 
+			const agendaRows = await listarAgenda.run({ id: profesional.id })
+			this.agenda = agendaRows || []
+
 			// 5) Devolver todo (opcional)
-			return { profesional, persona, domicilio };
+			// return { profesional, persona, domicilio };
 		} catch (e) {
 			showAlert(`Error cargando datos: ${e.message}`, "error");
 			throw e;

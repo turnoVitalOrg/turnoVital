@@ -1,0 +1,502 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowAddNewRow": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 109,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "canFreezeColumn": true,
+  "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "id",
+    "dia_semana",
+    "hora_inicio",
+    "hora_fin",
+    "customColumn1",
+    "fecha_creacion",
+    "profesional_id",
+    "estado"
+  ],
+  "columnUpdatedAt": 1763520916188,
+  "columnWidthMap": {
+    "BillingAddress": 212,
+    "CustomerID": 93,
+    "DeliveryFee": 128,
+    "Order_id": 107,
+    "ShippingAddress": 243,
+    "Status": 91,
+    "Total": 96,
+    "apellido": 131,
+    "customColumn1": 101,
+    "customColumn2": 101,
+    "customColumn4": 97,
+    "customColumn5": 97,
+    "dni": 131,
+    "email": 74,
+    "especialidad": 164,
+    "fecha_alta": 119,
+    "id": 90,
+    "matricula": 104,
+    "nombre": 118,
+    "status": 75,
+    "step": 62,
+    "task": 245,
+    "telefono": 110
+  },
+  "compactMode": "DEFAULT",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": "-1",
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "displayName": "Table",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.customColumn1.boxShadow"
+    },
+    {
+      "key": "primaryColumns.customColumn1.borderRadius"
+    },
+    {
+      "key": "cellBackground"
+    },
+    {
+      "key": "primaryColumns.customColumn1.cellBackground"
+    },
+    {
+      "key": "primaryColumns.id.computedValue"
+    },
+    {
+      "key": "primaryColumns.hora_inicio.computedValue"
+    },
+    {
+      "key": "primaryColumns.hora_fin.computedValue"
+    },
+    {
+      "key": "primaryColumns.dia_semana.computedValue"
+    },
+    {
+      "key": "primaryColumns.dia_semana.selectOptions"
+    },
+    {
+      "key": "primaryColumns.hora_fin.selectOptions"
+    },
+    {
+      "key": "primaryColumns.hora_inicio.selectOptions"
+    },
+    {
+      "key": "primaryColumns.fecha_creacion.computedValue"
+    },
+    {
+      "key": "primaryColumns.profesional_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.estado.computedValue"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onRowSelected"
+    },
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onRowSelected"
+    },
+    {
+      "key": "onPageChange"
+    },
+    {
+      "key": "onPageSizeChange"
+    },
+    {
+      "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "onAddNewRowSave"
+    },
+    {
+      "key": "primaryColumns.dia_semana.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.hora_inicio.onOptionChange"
+    },
+    {
+      "key": "primaryColumns.hora_fin.onOptionChange"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "enableServerSideFiltering": false,
+  "fontStyle": "",
+  "hideCard": false,
+  "horizontalAlignment": "LEFT",
+  "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
+  "infiniteScrollEnabled": false,
+  "inlineEditingSaveOption": "CUSTOM",
+  "isDeprecated": false,
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": true,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "361c7eqfhn",
+  "label": "Data",
+  "leftColumn": 1,
+  "onAddNewRowSave": "{{configurarAgenda.onSave(TablaAgenda.newRow);}}",
+  "onPageChange": "{{utils.getCustomers()}}",
+  "onPageSizeChange": "{{utils.getCustomers()}}",
+  "onRowSelected": "",
+  "originalBottomRow": 109,
+  "originalTopRow": 77,
+  "parentColumnSpace": 18.1875,
+  "parentId": "7cmoyy9k8n",
+  "parentRowSpace": 10,
+  "primaryColumnId": "CustomerID",
+  "primaryColumns": {
+    "customColumn1": {
+      "alias": "Eliminar",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{TablaAgenda.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{TablaAgenda.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#00477e",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "PRIMARY",
+      "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
+      "columnType": "iconButton",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "iconName": "trash",
+      "id": "customColumn1",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Eliminar",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{configurarAgenda.onDelete(currentRow.id);}}",
+      "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "dia_semana": {
+      "alias": "dia_semana",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"dia_semana\"])) : dia_semana })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "dia_semana",
+      "index": 4,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "dia_semana",
+      "notation": "standard",
+      "onOptionChange": "{{configurarAgenda.onChange(TablaAgenda.updatedRow);}}",
+      "originalId": "dia_semana",
+      "selectOptions": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( configurarAgenda.dias )) :  configurarAgenda.dias  })()}}",
+      "sortBy": "label",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {
+        "isColumnEditableCellRequired": true
+      },
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "estado": {
+      "alias": "estado",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"estado\"])) : estado })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "estado",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "estado",
+      "notation": "standard",
+      "originalId": "estado",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "fecha_creacion": {
+      "alias": "fecha_creacion",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"fecha_creacion\"])) : fecha_creacion })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "fecha_creacion",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "fecha_creacion",
+      "notation": "standard",
+      "originalId": "fecha_creacion",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "hora_fin": {
+      "alias": "hora_fin",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"hora_fin\"])) : hora_fin })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "hora_fin",
+      "index": 3,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "hora_fin",
+      "notation": "standard",
+      "onOptionChange": "{{configurarAgenda.onChange(TablaAgenda.updatedRow);}}",
+      "originalId": "hora_fin",
+      "selectOptions": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( utilsHorarios.generarHorarios())) :  utilsHorarios.generarHorarios() })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {
+        "isColumnEditableCellRequired": true
+      },
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "hora_inicio": {
+      "alias": "hora_inicio",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "select",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"hora_inicio\"])) : hora_inicio })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "hora_inicio",
+      "index": 2,
+      "isCellEditable": true,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": true,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "hora_inicio",
+      "notation": "standard",
+      "onOptionChange": "{{configurarAgenda.onChange(TablaAgenda.updatedRow);}}",
+      "originalId": "hora_inicio",
+      "selectOptions": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( utilsHorarios.generarHorarios())) :  utilsHorarios.generarHorarios() })()}}",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {
+        "isColumnEditableCellRequired": true
+      },
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "id": {
+      "alias": "id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"id\"])) : id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "id",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "id",
+      "notation": "standard",
+      "originalId": "id",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "profesional_id": {
+      "alias": "profesional_id",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "#f4f4f5",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"profesional_id\"])) : profesional_id })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "profesional_id",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "profesional_id",
+      "notation": "standard",
+      "originalId": "profesional_id",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "searchKey": "",
+  "serverSidePaginationEnabled": true,
+  "showInlineEditingOptionDropdown": true,
+  "tableData": "{{ configurarAgenda.agenda }}",
+  "textSize": "0.875rem",
+  "topRow": 77,
+  "totalRecordsCount": "",
+  "type": "TABLE_WIDGET_V2",
+  "variant": "VARIANT3",
+  "version": 1,
+  "verticalAlignment": "CENTER",
+  "widgetId": "n4g6wwslfs",
+  "widgetName": "TablaAgenda"
+}
