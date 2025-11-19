@@ -371,7 +371,7 @@
       "label": "Config. agenda",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{configurarAgenda.setProfesionalId(currentRow.profesional_id);\nshowModal(ModalConfigurarAgenda.name);\nmostrarAgenda.run().then(() => {\n  configurarAgenda.estructuraData();\n});}}",
+      "onClick": "{{configurarAgenda.setProfesionalId(currentRow.profesional_id);\nnavigateTo('Modificar Profesional', { \"id\": currentRow.profesional_id }, 'SAME_WINDOW');}}",
       "originalId": "customColumn2",
       "sticky": "",
       "textSize": "0.875rem",
