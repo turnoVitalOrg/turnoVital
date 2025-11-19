@@ -37,6 +37,7 @@
   "labelPosition": "Top",
   "labelTextColor": "#18181b",
   "labelTextSize": "0.875rem",
+  "labelTooltip": "",
   "labelWidth": 5,
   "leftColumn": 1,
   "maxDate": "2121-12-31T18:29:00.000Z",
