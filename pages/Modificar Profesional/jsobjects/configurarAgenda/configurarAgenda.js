@@ -19,6 +19,8 @@ export default {
 		const agendaRows = await listarAgenda.run({ id: profId })
 		this.agenda = agendaRows || []
 
+
+
 		this.hayCambios = false;
 	},
 	async onDelete(id){
@@ -59,12 +61,12 @@ export default {
 		})
 
 		console.log("ONSUBMIT RESPUESTA ", respuesta)
-		
+
 		//refresh agregado
-    const profId = appsmith.URL.queryParams.id;
-    const agendaActualizada = await listarAgenda.run({ id: profId });
-    this.agenda = agendaActualizada || [];
-		
+		const profId = appsmith.URL.queryParams.id;
+		const agendaActualizada = await listarAgenda.run({ id: profId });
+		this.agenda = agendaActualizada || [];
+
 		this.hayCambios = false;
 	}
 }
