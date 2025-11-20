@@ -3,7 +3,7 @@
   "allowAddNewRow": true,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 111,
+  "bottomRow": 109,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
@@ -31,16 +31,13 @@
     }
   },
   "columnOrder": [
-    "id",
     "dia_semana",
     "hora_inicio",
     "hora_fin",
     "customColumn1",
-    "fecha_creacion",
-    "profesional_id",
-    "estado"
+    "id"
   ],
-  "columnUpdatedAt": 1763520916188,
+  "columnUpdatedAt": 1763598549504,
   "columnWidthMap": {
     "BillingAddress": 212,
     "CustomerID": 93,
@@ -100,9 +97,6 @@
       "key": "primaryColumns.customColumn1.cellBackground"
     },
     {
-      "key": "primaryColumns.id.computedValue"
-    },
-    {
       "key": "primaryColumns.hora_inicio.computedValue"
     },
     {
@@ -121,13 +115,7 @@
       "key": "primaryColumns.hora_inicio.selectOptions"
     },
     {
-      "key": "primaryColumns.fecha_creacion.computedValue"
-    },
-    {
-      "key": "primaryColumns.profesional_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.estado.computedValue"
+      "key": "primaryColumns.id.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -187,8 +175,8 @@
   "onPageChange": "{{utils.getCustomers()}}",
   "onPageSizeChange": "{{utils.getCustomers()}}",
   "onRowSelected": "",
-  "originalBottomRow": 111,
-  "originalTopRow": 79,
+  "originalBottomRow": 109,
+  "originalTopRow": 77,
   "parentColumnSpace": 18.1875,
   "parentId": "7cmoyy9k8n",
   "parentRowSpace": 10,
@@ -271,74 +259,6 @@
       "validation": {
         "isColumnEditableCellRequired": true
       },
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "estado": {
-      "alias": "estado",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "#f4f4f5",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"estado\"])) : estado })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "estado",
-      "index": 6,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": false,
-      "label": "estado",
-      "notation": "standard",
-      "originalId": "estado",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "fecha_creacion": {
-      "alias": "fecha_creacion",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "#f4f4f5",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"fecha_creacion\"])) : fecha_creacion })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "fecha_creacion",
-      "index": 4,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": false,
-      "label": "fecha_creacion",
-      "notation": "standard",
-      "originalId": "fecha_creacion",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     },
@@ -438,43 +358,10 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "id",
       "notation": "standard",
       "originalId": "id",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "profesional_id": {
-      "alias": "profesional_id",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "#f4f4f5",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = TablaAgenda.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"profesional_id\"])) : profesional_id })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "profesional_id",
-      "index": 5,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": false,
-      "label": "profesional_id",
-      "notation": "standard",
-      "originalId": "profesional_id",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -491,7 +378,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{ configurarAgenda.agenda }}",
   "textSize": "0.875rem",
-  "topRow": 79,
+  "topRow": 77,
   "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT3",

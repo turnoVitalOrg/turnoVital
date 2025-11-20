@@ -47,9 +47,10 @@ export default {
 	async onSubmit () {
 		const agendaProcesada = this.agenda.map(a =>  {
 			if (a.id.startsWith("nuevo")) {
-				delete a.id
+				const {id,...rest}=a;
+				return rest;		
 			}
-			return a
+			return {...a}
 		})
 		console.log("AGENDA PROCESADA ", agendaProcesada)
 		const respuesta = await sincronizarAgenda.run({
