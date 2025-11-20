@@ -3,7 +3,7 @@
   "allowAddNewRow": true,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 88,
+  "bottomRow": 85,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
@@ -205,6 +205,9 @@
     },
     {
       "key": "primaryColumns.customColumn4.onClick"
+    },
+    {
+      "key": "isVisibleSearch"
     }
   ],
   "dynamicTriggerPathList": [
@@ -248,14 +251,14 @@
   "isVisibleDownload": true,
   "isVisibleFilters": true,
   "isVisiblePagination": true,
-  "isVisibleSearch": true,
+  "isVisibleSearch": "true",
   "key": "361c7eqfhn",
   "label": "Data",
   "leftColumn": 0,
   "onPageChange": "{{utils.getCustomers()}}",
   "onPageSizeChange": "{{utils.getCustomers()}}",
   "onRowSelected": "",
-  "originalBottomRow": 88,
+  "originalBottomRow": 85,
   "originalTopRow": 7,
   "parentColumnSpace": 18.1875,
   "parentId": "0",

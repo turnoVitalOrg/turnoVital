@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 76,
+  "bottomRow": 77,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "PRIMARY",
@@ -12,9 +12,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -30,7 +27,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{ configurarAgenda.hayCambios}}",
+  "isVisible": "true",
   "key": "1uy844x3zd",
   "leftColumn": 55,
   "minWidth": 120,
@@ -40,8 +37,8 @@
   "mobileTopRow": 73,
   "needsErrorInfo": false,
   "onClick": "{{agendaPDF.downloadAgendaPDF();}}",
-  "originalBottomRow": 76,
-  "originalTopRow": 72,
+  "originalBottomRow": 77,
+  "originalTopRow": 73,
   "parentColumnSpace": 10.46875,
   "parentId": "7cmoyy9k8n",
   "parentRowSpace": 10,
@@ -52,7 +49,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 63,
   "text": "Descargar",
-  "topRow": 72,
+  "topRow": 73,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "vvsg8rgixb",
