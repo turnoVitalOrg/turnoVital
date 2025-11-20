@@ -12,9 +12,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -30,7 +27,7 @@
   "isDefaultClickDisabled": true,
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{ configurarAgenda.hayCambios}}",
+  "isVisible": "true",
   "key": "1uy844x3zd",
   "leftColumn": 55,
   "minWidth": 120,
