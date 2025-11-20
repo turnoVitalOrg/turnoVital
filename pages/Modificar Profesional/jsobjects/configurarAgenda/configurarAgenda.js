@@ -59,6 +59,12 @@ export default {
 		})
 
 		console.log("ONSUBMIT RESPUESTA ", respuesta)
+		
+		//refresh agregado
+    const profId = appsmith.URL.queryParams.id;
+    const agendaActualizada = await listarAgenda.run({ id: profId });
+    this.agenda = agendaActualizada || [];
+		
 		this.hayCambios = false;
 	}
 }
