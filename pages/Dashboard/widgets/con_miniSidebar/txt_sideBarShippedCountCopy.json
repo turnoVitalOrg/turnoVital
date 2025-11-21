@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 38,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -12,6 +12,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -25,30 +28,30 @@
   "isLoading": false,
   "isVisible": true,
   "key": "e91frck28i",
-  "leftColumn": 3,
+  "leftColumn": 31,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 30,
-  "originalTopRow": 26,
+  "originalBottomRow": 40,
+  "originalTopRow": 36,
   "overflow": "NONE",
   "parentColumnSpace": 3.7119140625,
   "parentId": "9cskg5v2ka",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 31,
+  "rightColumn": 60,
   "searchTags": [
     "typography",
     "paragraph",
     "label"
   ],
   "shouldTruncate": false,
-  "text": "Completado",
-  "textAlign": "LEFT",
+  "text": "{{totalTurnosHoyAsistido.data[0]?.total_turnos_hoy_asistieron ?? 0}}",
+  "textAlign": "CENTER",
   "textColor": "#fff9f0",
-  "topRow": 22,
+  "topRow": 34,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "n2eagesjf0",
-  "widgetName": "txt_sidebarUnfulfilled"
+  "widgetId": "djxceb8ovl",
+  "widgetName": "txt_sideBarShippedCountCopy"
 }
