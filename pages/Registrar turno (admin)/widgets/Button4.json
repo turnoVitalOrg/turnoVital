@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "1d0fnptth3",
+  "leftColumn": 46,
+  "minWidth": 120,
+  "mobileBottomRow": 7,
+  "mobileLeftColumn": 46,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 3,
+  "needsErrorInfo": false,
+  "onClick": "{{navigateTo('Consultar Profesional', {}, 'SAME_WINDOW');}}",
+  "parentColumnSpace": 23.53125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "text": "Volver a profesionales",
+  "topRow": 1,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "189yt7867v",
+  "widgetName": "Button4"
+}
