@@ -26,7 +26,7 @@
   "isVisible": true,
   "key": "d80868s2dr",
   "leftColumn": 4,
-  "onClick": "{{btn_signInonClick.btn_signInonClick();\nnavigateTo('Dashboard', {}, 'SAME_WINDOW');}}",
+  "onClick": "{{navigateTo('Dashboard', {}, 'SAME_WINDOW');\nbtn_signInonClick.btn_signInonClick();}}",
   "originalBottomRow": 38,
   "originalTopRow": 32,
   "parentColumnSpace": 18.1875,
