@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 24,
+  "bottomRow": 22,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -37,7 +37,7 @@
   "text": "Estado de turnos",
   "textAlign": "LEFT",
   "textColor": "#fff9f0",
-  "topRow": 20,
+  "topRow": 18,
   "truncateButtonColor": "#FFC13D",
   "type": "TEXT_WIDGET",
   "version": 1,

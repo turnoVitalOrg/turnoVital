@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 30,
+  "bottomRow": 26,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -28,7 +28,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "e91frck28i",
-  "leftColumn": 32,
+  "leftColumn": 31,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "originalBottomRow": 30,
@@ -38,7 +38,7 @@
   "parentId": "9cskg5v2ka",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 61,
+  "rightColumn": 60,
   "searchTags": [
     "typography",
     "paragraph",
@@ -48,7 +48,7 @@
   "text": "{{totalTurnosHoyAsistido.data[0]?.total_turnos_hoy_asistieron ?? 0}}",
   "textAlign": "CENTER",
   "textColor": "#fff9f0",
-  "topRow": 26,
+  "topRow": 22,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
