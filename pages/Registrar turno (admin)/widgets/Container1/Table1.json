@@ -42,7 +42,7 @@
     "profesional_matricula",
     "profesional_especialidad"
   ],
-  "columnUpdatedAt": 1763268537555,
+  "columnUpdatedAt": 1764632776337,
   "columnWidthMap": {
     "paciente_nombre": 254,
     "profesional_matricula": 187,
@@ -290,7 +290,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Especialidad",
       "notation": "standard",
       "originalId": "profesional_especialidad",
