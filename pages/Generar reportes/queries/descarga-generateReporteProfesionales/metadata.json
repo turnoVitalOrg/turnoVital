@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6920cee76cbf32677991e974_6ee42d60-1e87-4a58-9c4c-37ac09358c98",
-  "id": "Generar reportes_descarga.generatePDF",
+  "gitSyncId": "6920cee76cbf32677991e974_ce59161b-d0ad-4902-8792-a81d2ba6230c",
+  "id": "Generar reportes_descarga.generateReporteProfesionales",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "descarga.generatePDF",
-    "name": "generatePDF",
+    "fullyQualifiedName": "descarga.generateReporteProfesionales",
+    "name": "generateReporteProfesionales",
     "pageId": "Generar reportes",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false
