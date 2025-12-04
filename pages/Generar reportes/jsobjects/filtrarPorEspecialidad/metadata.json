@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6920cee76cbf32677991e974_a25cafff-e147-4e88-a014-e63ffc095c36",
+  "id": "Generar reportes_filtrarPorEspecialidad",
+  "unpublishedCollection": {
+    "name": "filtrarPorEspecialidad",
+    "pageId": "Generar reportes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

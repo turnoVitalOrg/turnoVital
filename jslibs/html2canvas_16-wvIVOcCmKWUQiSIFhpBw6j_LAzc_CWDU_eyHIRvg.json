@@ -1,0 +1,10 @@
+{
+  "accessor": [
+    "html2canvas"
+  ],
+  "defs": "{\"!name\":\"LIB/html2canvas\",\"html2canvas\":{\"!type\":\"fn()\",\"prototype\":{}}}",
+  "name": "html2canvas",
+  "uidString": "html2canvas_https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
+  "url": "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js",
+  "version": ""
+}
