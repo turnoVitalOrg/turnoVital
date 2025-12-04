@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6920cee76cbf32677991e974_9d3a79ee-916a-47e8-8b61-af2ad21a42c2",
+  "id": "Generar reportes_generateTablaEvolucion",
+  "unpublishedCollection": {
+    "name": "generateTablaEvolucion",
+    "pageId": "Generar reportes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "defaultOptionValue": "Diciembre 2025",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "7hj8bi25ze",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Hasta:",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 22,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 42,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "optionLabel": "name",
+  "optionValue": "code",
+  "parentColumnSpace": 11.0078125,
+  "parentId": "6mpb4fjaq7",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 42,
+  "serverSideFiltering": false,
+  "sourceData": "[\n  { \"name\": \"Enero 2025\", \"code\": \"Enero 2025\" },\n  { \"name\": \"Febrero 2025\", \"code\": \"Febrero 2025\" },\n  { \"name\": \"Marzo 2025\", \"code\": \"Marzo 2025\" },\n  { \"name\": \"Abril 2025\", \"code\": \"Abril 2025\" },\n  { \"name\": \"Mayo 2025\", \"code\": \"Mayo 2025\" },\n  { \"name\": \"Junio 2025\", \"code\": \"Junio 2025\" },\n  { \"name\": \"Julio 2025\", \"code\": \"Julio 2025\" },\n  { \"name\": \"Agosto 2025\", \"code\": \"Agosto 2025\" },\n  { \"name\": \"Septiembre 2025\", \"code\": \"Septiembre 2025\" },\n  { \"name\": \"Octubre 2025\", \"code\": \"Octubre 2025\" },\n  { \"name\": \"Noviembre 2025\", \"code\": \"Noviembre 2025\" },\n  { \"name\": \"Diciembre 2025\", \"code\": \"Diciembre 2025\" }\n]\n",
+  "topRow": 1,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ywixt8cj8z",
+  "widgetName": "dd_mesHasta"
+}

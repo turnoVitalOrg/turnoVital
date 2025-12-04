@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6920cee76cbf32677991e974_22fdf2bf-2b6d-496a-9a23-97b204570610",
+  "id": "Generar reportes_descargaTurnosMes",
+  "unpublishedCollection": {
+    "name": "descargaTurnosMes",
+    "pageId": "Generar reportes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

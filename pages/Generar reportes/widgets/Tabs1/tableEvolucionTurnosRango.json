@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 38,
+  "bottomRow": 37,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -32,10 +32,10 @@
     }
   },
   "columnOrder": [
-    "especialidad",
-    "totalTurnos"
+    "Mes",
+    "Total"
   ],
-  "columnUpdatedAt": 1764883224910,
+  "columnUpdatedAt": 1764886735006,
   "columnWidthMap": {},
   "customIsLoading": false,
   "customIsLoadingValue": "",
@@ -59,10 +59,10 @@
       "key": "tableData"
     },
     {
-      "key": "primaryColumns.especialidad.computedValue"
+      "key": "primaryColumns.Mes.computedValue"
     },
     {
-      "key": "primaryColumns.totalTurnos.computedValue"
+      "key": "primaryColumns.Total.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -87,29 +87,27 @@
   "label": "Data",
   "leftColumn": 2,
   "minWidth": 450,
-  "mobileBottomRow": 38,
+  "mobileBottomRow": 37,
   "mobileLeftColumn": 2,
   "mobileRightColumn": 36,
-  "mobileTopRow": 10,
+  "mobileTopRow": 9,
   "needsErrorInfo": false,
   "parentColumnSpace": 11.0078125,
-  "parentId": "nkuzrw28dp",
+  "parentId": "6mpb4fjaq7",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "especialidad": {
-      "alias": "especialidad",
+    "Mes": {
+      "alias": "Mes",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"especialidad\"])) : especialidad })()}}",
+      "computedValue": "{{(() => { const tableData = tableEvolucionTurnosRango.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Mes\"])) : Mes })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "especialidad",
+      "id": "Mes",
       "index": 0,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -119,32 +117,29 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Especialidad",
+      "label": "Mes",
       "notation": "standard",
-      "originalId": "especialidad",
+      "originalId": "Mes",
       "sticky": "",
-      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "totalTurnos": {
-      "alias": "totalTurnos",
+    "Total": {
+      "alias": "Total",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
       "columnType": "number",
-      "computedValue": "{{(() => { const tableData = Table2.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"totalTurnos\"])) : totalTurnos })()}}",
+      "computedValue": "{{(() => { const tableData = tableEvolucionTurnosRango.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Total\"])) : Total })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
-      "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "totalTurnos",
-      "index": 1,
+      "id": "Total",
+      "index": 3,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -155,9 +150,8 @@
       "isVisible": true,
       "label": "Turnos",
       "notation": "standard",
-      "originalId": "totalTurnos",
+      "originalId": "Total",
       "sticky": "",
-      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},
@@ -167,15 +161,15 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 25,
+  "rightColumn": 21,
   "searchKey": "",
-  "tableData": "{{\n  getTurnos.data\n    .map(turnoItem => {\n      const profesional = getProfesionales.data.find(p => p.id === turnoItem.profesional_id);\n      const especialidad = getEspecialidades.data.find(e => e.id === profesional?.especialidad_id);\n      return {\n        ...turnoItem,\n        especialidadNombre: especialidad ? especialidad.nombre : \"Sin especialidad\"\n      };\n    })\n    .filter(t => {\n      const start = new Date(startDatePicker.selectedDate);\n      const end = new Date(endDatePicker.selectedDate);\n      const turnoFecha = new Date(t.fecha);\n      return turnoFecha >= start && turnoFecha <= end;\n    })\n    .reduce((acc, t) => {\n      const index = acc.findIndex(e => e.especialidad == t.especialidadNombre);\n      if(index >= 0){\n        acc[index].totalTurnos += 1;\n      } else {\n        acc.push({ especialidad: t.especialidadNombre, totalTurnos: 1 });\n      }\n      return acc;\n    }, [])\n}}",
+  "tableData": "{{ generateTablaEvolucion.llenarTabla() }}",
   "textSize": "0.875rem",
-  "topRow": 10,
+  "topRow": 9,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",
-  "widgetId": "62x0bgvuug",
-  "widgetName": "Table2"
+  "widgetId": "ym2aas2f5v",
+  "widgetName": "tableEvolucionTurnosRango"
 }
