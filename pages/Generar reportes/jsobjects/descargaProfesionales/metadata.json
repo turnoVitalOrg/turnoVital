@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6920cee76cbf32677991e974_2bd6a179-f3fb-48a2-873c-1c3ac5ef1c22",
+  "id": "Generar reportes_descargaProfesionales",
+  "unpublishedCollection": {
+    "name": "descargaProfesionales",
+    "pageId": "Generar reportes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

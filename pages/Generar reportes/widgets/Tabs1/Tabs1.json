@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 59,
+  "bottomRow": 60,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "children": [
     {
@@ -55,7 +55,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 480,
+      "bottomRow": 490,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -99,7 +99,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 480,
+      "bottomRow": 490,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -141,6 +141,51 @@
       "version": 1,
       "widgetId": "6mpb4fjaq7",
       "widgetName": "Canvas4"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 490,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "um236slism",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 600,
+      "minWidth": 450,
+      "mobileBottomRow": 601,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 724.5,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "xpay67zc9s",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 724.5,
+      "tabId": "tab50xfmd8yr8",
+      "tabName": "Test",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "zgmapehfto",
+      "widgetName": "Canvas5"
     }
   ],
   "defaultTab": "",
@@ -168,7 +213,7 @@
   "mobileRightColumn": 31,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 59,
+  "originalBottomRow": 60,
   "originalTopRow": 7,
   "parentColumnSpace": 11.5,
   "parentId": "0",
@@ -187,6 +232,13 @@
       "label": "Profesionales por Especialidad",
       "positioning": "vertical",
       "widgetId": "wn5fkzmxdy"
+    },
+    "tab50xfmd8yr8": {
+      "id": "tab50xfmd8yr8",
+      "index": 3,
+      "isVisible": true,
+      "label": "Test",
+      "widgetId": "zgmapehfto"
     },
     "tabi5pdh11z0q": {
       "id": "tabi5pdh11z0q",
