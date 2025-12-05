@@ -1,7 +1,8 @@
 export default {
   generateReporteTurnosPDF: async () => {
     try {
-      // 1️⃣ Filtrar y agrupar los turnos según DatePickers
+      // 1️⃣ Filtrar y agrupar los turnos según DatePickers y MultiSelect
+      const seleccionadas = MultiSelect1.selectedOptionValues; // array de ids
       const turnosFiltrados = getTurnos.data
         .map(turnoItem => {
           const profesional = getProfesionales.data.find(p => p.id === turnoItem.profesional_id);
@@ -12,7 +13,17 @@ export default {
           const start = new Date(startDatePicker.selectedDate);
           const end = new Date(endDatePicker.selectedDate);
           const turnoFecha = new Date(t.fecha);
-          return turnoFecha >= start && turnoFecha <= end;
+
+          // Filtro por fecha
+          const fechaValida = turnoFecha >= start && turnoFecha <= end;
+
+          // Filtro por MultiSelect
+          const especialidadValida = !seleccionadas?.length || 
+            seleccionadas.includes(
+              getEspecialidades.data.find(e => e.nombre === t.especialidadNombre)?.id
+            );
+
+          return fechaValida && especialidadValida;
         })
         .reduce((acc, t) => {
           const index = acc.findIndex(e => e.especialidad === t.especialidadNombre);
@@ -57,15 +68,15 @@ export default {
 
       yPos += 10;
 
-      // 4️⃣ Gráfico de torta simulado con barras
+      // 4️⃣ Gráfico de barras simulado
       const totalTurnos = turnosFiltrados.reduce((sum, t) => sum + t.totalTurnos, 0);
       const colors = ['#FF6384','#36A2EB','#FFCE56','#4BC0C0','#9966FF','#FF9F40','#8BC34A','#00BCD4','#FF5722'];
       let barY = yPos;
 
       turnosFiltrados.forEach((item, i) => {
-        const width = (item.totalTurnos / totalTurnos) * 150; // ancho proporcional
+        const width = (item.totalTurnos / totalTurnos) * 150;
         doc.setFillColor(colors[i % colors.length]);
-        doc.rect(30, barY, width, 15, 'F'); // dibuja barra
+        doc.rect(30, barY, width, 15, 'F');
         doc.setTextColor(0, 0, 0);
         doc.text(`${item.especialidad} (${((item.totalTurnos/totalTurnos)*100).toFixed(1)}%)`, 30 + 2, barY + 10);
         barY += 20;

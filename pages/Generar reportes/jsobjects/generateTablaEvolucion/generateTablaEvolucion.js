@@ -1,10 +1,13 @@
 export default {
   llenarTabla: () => {
     try {
-      const mesesArray = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
-        "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+      // Array con los nombres de los meses
+      const mesesArray = [
+        "Enero","Febrero","Marzo","Abril","Mayo","Junio",
+        "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"
+      ];
 
-      // Obtener rango de meses
+      // 1️⃣ Obtener mes y año desde los dropdown
       const [nombreMesDesde, anioDesdeStr] = dd_mesDesde.selectedOptionValue.split(" ");
       const mesDesde = mesesArray.indexOf(nombreMesDesde);
       const anioDesde = parseInt(anioDesdeStr);
@@ -13,27 +16,32 @@ export default {
       const mesHasta = mesesArray.indexOf(nombreMesHasta);
       const anioHasta = parseInt(anioHastaStr);
 
-      const estado = dd_estado2.selectedOptionValue;
+      // 2️⃣ Obtener estado seleccionado
+      const estado = dd_estado2.selectedOptionValue; // "Asistidos", "No Asistidos", "Todos"
 
-      // Filtrar turnos por rango de meses
-      let turnosFiltrados = getTurnos.data.filter(t => {
+      // 3️⃣ Filtrar turnos por rango de meses
+      const turnosFiltrados = getTurnos.data.filter(t => {
         const fechaTurno = new Date(t.fecha);
         const mes = fechaTurno.getMonth();
         const anio = fechaTurno.getFullYear();
-        const desdeNum = anioDesde*12 + mesDesde;
-        const hastaNum = anioHasta*12 + mesHasta;
-        const actualNum = anio*12 + mes;
+
+        const desdeNum = anioDesde * 12 + mesDesde;
+        const hastaNum = anioHasta * 12 + mesHasta;
+        const actualNum = anio * 12 + mes;
+
         return actualNum >= desdeNum && actualNum <= hastaNum;
       });
 
-      // Generar tabla por mes
+      // 4️⃣ Generar tabla mes a mes
       const tabla = [];
+
       for (let y = anioDesde; y <= anioHasta; y++) {
         const mesIni = y === anioDesde ? mesDesde : 0;
         const mesFin = y === anioHasta ? mesHasta : 11;
 
         for (let m = mesIni; m <= mesFin; m++) {
           const mesTexto = `${mesesArray[m]} ${y}`;
+
           const turnosMes = turnosFiltrados.filter(t => {
             const fechaTurno = new Date(t.fecha);
             return fechaTurno.getMonth() === m && fechaTurno.getFullYear() === y;
@@ -51,9 +59,10 @@ export default {
         }
       }
 
-      return tabla; // Retornamos array listo para Table Data
+      return tabla; // Array listo para Table Data
+
     } catch (error) {
-      console.error(error);
+      console.error("Error generando tabla de evolución:", error);
       return [];
     }
   }

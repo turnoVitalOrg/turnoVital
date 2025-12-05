@@ -3,11 +3,11 @@
   "allowScroll": false,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 42,
+  "bottomRow": 40,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "pi4rhg7ey8": {
-      "data": "{{\n  getTurnos.data\n    .map(turnoItem => {\n      const profesional = getProfesionales.data.find(p => p.id === turnoItem.profesional_id);\n      const especialidad = getEspecialidades.data.find(e => e.id === profesional?.especialidad_id);\n      return {\n        ...turnoItem,\n        especialidadNombre: especialidad ? especialidad.nombre : \"Sin especialidad\"\n      };\n    })\n    .filter(t => {\n      const start = new Date(startDatePicker.selectedDate);\n      const end = new Date(endDatePicker.selectedDate);\n      const turnoFecha = new Date(t.fecha);\n      return turnoFecha >= start && turnoFecha <= end;\n    })\n    .reduce((acc, t) => {\n      const index = acc.findIndex(e => e.especialidad == t.especialidadNombre);\n      if(index >= 0){\n        acc[index].totalTurnos += 1;\n      } else {\n        acc.push({ especialidad: t.especialidadNombre, totalTurnos: 1 });\n      }\n      return acc;\n    }, [])\n    .map(e => ({ x: e.especialidad, y: e.totalTurnos }))\n}}\n",
+      "data": "{{\n  getTurnos.data\n    .map(turnoItem => {\n      const profesional = getProfesionales.data.find(p => p.id === turnoItem.profesional_id);\n      const especialidad = getEspecialidades.data.find(e => e.id === profesional?.especialidad_id);\n      return {\n        ...turnoItem,\n        especialidadNombre: especialidad ? especialidad.nombre : \"Sin especialidad\"\n      };\n    })\n    .filter(t => {\n      const start = new Date(startDatePicker.selectedDate);\n      const end = new Date(endDatePicker.selectedDate);\n      const turnoFecha = new Date(t.fecha);\n\n      // Filtro por fecha\n      const fechaValida = turnoFecha >= start && turnoFecha <= end;\n\n      // Filtro por MultiSelect\n      const seleccionadas = MultiSelect1.selectedOptionValues; // array de ids\n      const especialidadValida = !seleccionadas?.length ||\n        seleccionadas.includes(\n          getEspecialidades.data.find(e => e.nombre === t.especialidadNombre)?.id\n        );\n\n      return fechaValida && especialidadValida;\n    })\n    .reduce((acc, t) => {\n      const index = acc.findIndex(e => e.especialidad == t.especialidadNombre);\n      if(index >= 0){\n        acc[index].totalTurnos += 1;\n      } else {\n        acc.push({ especialidad: t.especialidadNombre, totalTurnos: 1 });\n      }\n      return acc;\n    }, [])\n    .map(e => ({ x: e.especialidad, y: e.totalTurnos }))\n}}",
       "seriesName": "Especialidad"
     }
   },
@@ -102,7 +102,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 63,
   "showDataPointLabel": true,
-  "topRow": 10,
+  "topRow": 8,
   "type": "CHART_WIDGET",
   "version": 1,
   "widgetId": "agy7vv40np",

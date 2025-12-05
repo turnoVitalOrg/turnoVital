@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 60,
+  "bottomRow": 59,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "children": [
     {
@@ -55,7 +55,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 490,
+      "bottomRow": 480,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -99,7 +99,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 490,
+      "bottomRow": 480,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -144,7 +144,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 490,
+      "bottomRow": 480,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -213,7 +213,7 @@
   "mobileRightColumn": 31,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 60,
+  "originalBottomRow": 61,
   "originalTopRow": 7,
   "parentColumnSpace": 11.5,
   "parentId": "0",
@@ -226,18 +226,19 @@
   "tabsObj": {
     "tab2": {
       "id": "tab2",
-      "index": 0,
+      "index": 3,
       "isDuplicateLabel": false,
-      "isVisible": true,
-      "label": "Profesionales por Especialidad",
+      "isVisible": false,
+      "label": "prueba",
       "positioning": "vertical",
       "widgetId": "wn5fkzmxdy"
     },
     "tab50xfmd8yr8": {
       "id": "tab50xfmd8yr8",
-      "index": 3,
+      "index": 0,
+      "isDuplicateLabel": false,
       "isVisible": true,
-      "label": "Test",
+      "label": "Profesionales por Especialidad",
       "widgetId": "zgmapehfto"
     },
     "tabi5pdh11z0q": {

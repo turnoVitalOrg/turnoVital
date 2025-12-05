@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 38,
+  "bottomRow": 39,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -28,8 +28,8 @@
   "leftColumn": 3,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 40,
-  "originalTopRow": 36,
+  "originalBottomRow": 38,
+  "originalTopRow": 34,
   "overflow": "NONE",
   "parentColumnSpace": 3.7119140625,
   "parentId": "9cskg5v2ka",
@@ -45,7 +45,7 @@
   "text": "Cancelado",
   "textAlign": "LEFT",
   "textColor": "#fff9f0",
-  "topRow": 34,
+  "topRow": 35,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

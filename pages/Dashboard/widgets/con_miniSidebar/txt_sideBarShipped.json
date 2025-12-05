@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 34,
+  "bottomRow": 35,
   "displayName": "Text",
   "dynamicBindingPathList": [
     {
@@ -28,8 +28,8 @@
   "leftColumn": 3,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
-  "originalBottomRow": 40,
-  "originalTopRow": 36,
+  "originalBottomRow": 34,
+  "originalTopRow": 30,
   "overflow": "NONE",
   "parentColumnSpace": 3.7119140625,
   "parentId": "9cskg5v2ka",
@@ -45,7 +45,7 @@
   "text": "Iniciado",
   "textAlign": "LEFT",
   "textColor": "#fff9f0",
-  "topRow": 30,
+  "topRow": 31,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

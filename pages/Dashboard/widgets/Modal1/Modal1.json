@@ -19,7 +19,7 @@
       "isVisible": true,
       "key": "48jz6a6h31",
       "leftColumn": 0,
-      "minHeight": 674,
+      "minHeight": 650,
       "parentColumnSpace": 1,
       "parentId": "4x6jon5pvu",
       "parentRowSpace": 1,
@@ -68,5 +68,5 @@
   "version": 2,
   "widgetId": "4x6jon5pvu",
   "widgetName": "Modal1",
-  "width": 762
+  "width": 710.6
 }

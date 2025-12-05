@@ -44,15 +44,14 @@ export default {
           else if (estado === "No Asistidos") total = turnosMes.filter(t => t.estado === false).length;
           else total = turnosMes.length; // Todos
 
-          tabla.push({
-            "Mes": mesTexto,
-            "Total": total
-          });
+          tabla.push({ "Mes": mesTexto, "Total": total });
         }
       }
 
-      if(tabla.length === 0){
-        showAlert("No hay datos para el PDF con los filtros seleccionados", "info");
+      // Si no hay datos, mostrar alerta y salir
+      const totalGeneral = tabla.reduce((acc, t) => acc + t.Total, 0);
+      if(totalGeneral === 0){
+        showAlert("No hay registros para el rango y estado seleccionados. PDF no generado.", "info");
         return;
       }
 
@@ -77,9 +76,6 @@ export default {
       doc.line(20, 32, 190, 32);
 
       let yPos = 40;
-			
-
-
 
       // Tabla
       doc.setFontSize(12);
@@ -103,17 +99,17 @@ export default {
       });
 
       yPos += 10;
-			
-			// Mostrar filtro de estado
-			doc.setFontSize(12);
-			doc.setTextColor(...textColor);
-			doc.text(`Estado de turnos: ${estado}`, 30, yPos);
-			yPos += 8;
-			
+
+      // Mostrar filtro de estado
+      doc.setFontSize(12);
+      doc.setTextColor(...textColor);
+      doc.text(`Estado de turnos: ${estado}`, 30, yPos);
+      yPos += 8;
+
       // --- Gráfico de barras horizontales ---
-      const maxTotal = Math.max(...tabla.map(t => t.Total), 1); // evitar dividir por 0
+      const maxTotal = Math.max(...tabla.map(t => t.Total), 1);
       const barHeight = 8;
-      const barMaxWidth = 120; // ancho máximo de barra
+      const barMaxWidth = 120;
 
       doc.setFontSize(10);
       doc.setTextColor(...textColor);
@@ -123,15 +119,12 @@ export default {
       tabla.forEach(item => {
         const barWidth = (item.Total / maxTotal) * barMaxWidth;
 
-        // barra
         doc.setFillColor(...primaryColor);
         doc.rect(30, yPos - barHeight + 2, barWidth, barHeight, 'F');
 
-        // valor al final de la barra
         doc.setFont(undefined, 'bold');
         doc.text(String(item.Total), 32 + barWidth, yPos);
 
-        // nombre del mes al inicio
         doc.setFont(undefined, 'normal');
         doc.text(item.Mes, 30, yPos - barHeight);
 
