@@ -21,7 +21,7 @@ export default {
 		const totalHorarios = this.generarHorarios(agenda.hora_inicio, agenda.hora_fin)
 		console.log("TOTAL HORARIOS CALCULADOS ", totalHorarios)
 
-		console.log("TOTAL TURNOS ", mostrarTurnos.data)
+		console.log("TOTAL TURNOS ", mostrarTurnos2.data)
 
 		// Recorremos todos los horarios que tiene el profesional y solo dejamos los horarios que no se encuentran entre los turnos ya solicitados.
 		this.turnosDisponibles = totalHorarios.filter((horario) => !mostrarTurnosPorDia.data.find((turno) => turno.hora == horario.code)) 
