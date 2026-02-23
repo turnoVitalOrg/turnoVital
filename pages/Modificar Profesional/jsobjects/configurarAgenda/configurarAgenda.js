@@ -1,8 +1,6 @@
 export default {
-
   agenda: [],
   agendaOriginal: [],
-  cambios: [],
 
   dias: [
     { value: "lunes", label: "Lunes" },
@@ -14,8 +12,7 @@ export default {
     { value: "domingo", label: "Domingo" },
   ],
 
-  hayCambios: false,
-
+  // Inicializa los datos desde la DB
   async init() {
     const profId = appsmith.URL.queryParams.id;
 
@@ -26,37 +23,35 @@ export default {
 
     const agendaRows = await listarAgenda.run({ id: profId });
 
-    this.agenda = agendaRows || [];
+    // Guardamos dos copias separadas
+    this.agenda = JSON.parse(JSON.stringify(agendaRows || []));
     this.agendaOriginal = JSON.parse(JSON.stringify(this.agenda));
-    this.cambios = [];
-    this.hayCambios = false;
+    
+    showAlert("Agenda cargada", "info");
   },
 
+  // Se llama desde el botón "Borrar" de la tabla
   async onDelete(id) {
-    const indexDelete = this.agenda.findIndex(a => a.id == id);
-    if (indexDelete !== -1) {
-      this.agenda.splice(indexDelete, 1);
-      this.hayCambios = true;
-    }
+    this.agenda = this.agenda.filter(a => a.id !== id);
   },
 
+  // Se llama desde un formulario de "Nuevo"
   async onSave(data) {
     this.agenda.push({
       id: "nuevo_" + Date.now(),
       ...data
     });
-    this.hayCambios = true;
   },
 
+  // Se llama desde el evento "onSave" de la celda de la tabla (Inline Editing)
   async onChange(updateRow) {
     this.agenda = this.agenda.map(a =>
-      a.id == updateRow.id ? updateRow : a
+      a.id === updateRow.id ? updateRow : a
     );
-    this.hayCambios = true;
   },
 
-  async onSubmit() {
-
+  // Función que calcula la diferencia entre lo actual y lo original
+  getDetalleCambios() {
     const originales = this.agendaOriginal;
     const actuales = this.agenda;
 
@@ -70,25 +65,36 @@ export default {
 
     const editados = actuales.filter(a => {
       const original = originales.find(o => o.id == a.id);
-      if (!original) return false;
+      // Si no existe o es nuevo, no es un "editado"
+      if (!original || String(a.id).startsWith("nuevo_")) return false;
+      // Comparamos si hubo cambios reales en los datos
       return JSON.stringify(original) !== JSON.stringify(a);
     });
 
-    this.cambios = [
+    return [
       ...nuevos.map(n => ({ tipo: "nuevo", data: n })),
       ...eliminados.map(e => ({ tipo: "eliminado", data: e })),
       ...editados.map(ed => ({ tipo: "editado", data: ed })),
     ];
+  },
 
-    const agendaProcesada = actuales.map(a => {
+  // Guarda en la base de datos
+  async onSubmit() {
+    const cambios = this.getDetalleCambios();
+    
+    if (cambios.length === 0) {
+      showAlert("No hay cambios detectados para guardar", "warning");
+      return;
+    }
+
+    const agendaProcesada = this.agenda.map(a => {
       if (String(a.id).startsWith("nuevo_")) {
-        const { id, ...rest } = a;
+        const { id, ...rest } = a; // Quitamos el ID temporal
         return rest;
       }
-      return { ...a };
+      return a;
     });
 
-    // 🔥 ESTA ES LA PARTE IMPORTANTE
     await sincronizarAgenda.run({
       profesionalId: appsmith.URL.queryParams.id,
       agenda: agendaProcesada
@@ -96,11 +102,7 @@ export default {
 
     showAlert("Cambios guardados correctamente", "success");
 
+    // Actualizamos el original para que la tabla se considere "limpia"
     this.agendaOriginal = JSON.parse(JSON.stringify(this.agenda));
-    this.hayCambios = false;
-  },
-
-  getCambiosParaExportar() {
-    return this.cambios;
   }
 };
