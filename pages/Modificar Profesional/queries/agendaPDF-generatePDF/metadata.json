@@ -11,10 +11,10 @@
           "name": "cambiosData"
         },
         {
-          "name": "nombreProfesional"
+          "name": "nombre"
         },
         {
-          "name": "apellidoProfesional"
+          "name": "apellido"
         }
       ],
       "paginationType": "NONE",

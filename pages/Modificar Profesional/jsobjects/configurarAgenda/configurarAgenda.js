@@ -1,108 +1,92 @@
 export default {
-  agenda: [],
-  agendaOriginal: [],
+	agenda: [],
+	agendaOriginal: [],
+	dias: [
+		{ value: "lunes", label: "Lunes" },
+		{ value: "martes", label: "Martes" },
+		{ value: "miercoles", label: "Miercoles" },
+		{ value: "jueves", label: "Jueves" },
+		{ value: "viernes", label: "Viernes" },
+		{ value: "sabado", label: "Sabado" },
+		{ value: "domingo", label: "Domingo" },
+	],
+	hayCambios: false,
 
-  dias: [
-    { value: "lunes", label: "Lunes" },
-    { value: "martes", label: "Martes" },
-    { value: "miercoles", label: "Miercoles" },
-    { value: "jueves", label: "Jueves" },
-    { value: "viernes", label: "Viernes" },
-    { value: "sabado", label: "Sabado" },
-    { value: "domingo", label: "Domingo" },
-  ],
+	async init() {
+		const profId = appsmith.URL.queryParams.id;
+		if (!profId) return;
+		
+		try {
+			const res = await listarAgenda.run({ id: profId });
+			// Inicializamos ambos arrays con la data fresca
+			configurarAgenda.agenda = res || [];
+			configurarAgenda.agendaOriginal = JSON.parse(JSON.stringify(configurarAgenda.agenda));
+			configurarAgenda.hayCambios = false;
+		} catch (error) {
+			console.error("Error en init:", error);
+		}
+	},
 
-  // Inicializa los datos desde la DB
-  async init() {
-    const profId = appsmith.URL.queryParams.id;
+	async onDelete(id) {
+		// Filtramos el array actual
+		configurarAgenda.agenda = configurarAgenda.agenda.filter(item => String(item.id) !== String(id));
+		configurarAgenda.hayCambios = true;
+		showAlert("Fila removida (descarga el PDF para ver los cambios)", "info");
+	},
 
-    if (!profId) {
-      showAlert("Falta el parámetro id en la URL", "warning");
-      return;
-    }
+	async onChange(updatedRow) {
+		// Esta función es la que te daba error. Ahora existe y actualiza la fila editada.
+		configurarAgenda.agenda = configurarAgenda.agenda.map(item => 
+			String(item.id) === String(updatedRow.id) ? updatedRow : item
+		);
+		configurarAgenda.hayCambios = true;
+	},
 
-    const agendaRows = await listarAgenda.run({ id: profId });
+	async onSave(data) {
+		const nuevoItem = { id: "nuevo" + Date.now(), ...data };
+		configurarAgenda.agenda = [...configurarAgenda.agenda, nuevoItem];
+		configurarAgenda.hayCambios = true;
+	},
 
-    // Guardamos dos copias separadas
-    this.agenda = JSON.parse(JSON.stringify(agendaRows || []));
-    this.agendaOriginal = JSON.parse(JSON.stringify(this.agenda));
-    
-    showAlert("Agenda cargada", "info");
-  },
+	getDetalleCambios() {
+		const originales = configurarAgenda.agendaOriginal || [];
+		const actuales = configurarAgenda.agenda || [];
+		
+		// 1. Detectar eliminados (estaban en original pero no en actual)
+		const eliminados = originales.filter(o => !actuales.some(a => String(a.id) === String(o.id)));
+		
+		// 2. Detectar nuevos (IDs que empiezan con "nuevo")
+		const nuevos = actuales.filter(a => String(a.id).startsWith("nuevo"));
+		
+		// 3. Detectar editados (mismo ID pero datos distintos)
+		const editados = actuales.filter(a => {
+			const orig = originales.find(o => String(o.id) === String(a.id));
+			if (!orig || String(a.id).startsWith("nuevo")) return false;
+			return JSON.stringify(orig) !== JSON.stringify(a);
+		});
 
-  // Se llama desde el botón "Borrar" de la tabla
-  async onDelete(id) {
-    this.agenda = this.agenda.filter(a => a.id !== id);
-  },
+		return [
+			...nuevos.map(n => ({ tipo: "nuevo", data: n })),
+			...eliminados.map(e => ({ tipo: "eliminado", data: e })),
+			...editados.map(ed => ({ tipo: "editado", data: ed })),
+		];
+	},
 
-  // Se llama desde un formulario de "Nuevo"
-  async onSave(data) {
-    this.agenda.push({
-      id: "nuevo_" + Date.now(),
-      ...data
-    });
-  },
+	async onSubmit() {
+		const agendaProcesada = configurarAgenda.agenda.map(a => {
+			if (String(a.id).startsWith("nuevo")) {
+				const { id, ...rest } = a;
+				return rest;
+			}
+			return { ...a };
+		});
 
-  // Se llama desde el evento "onSave" de la celda de la tabla (Inline Editing)
-  async onChange(updateRow) {
-    this.agenda = this.agenda.map(a =>
-      a.id === updateRow.id ? updateRow : a
-    );
-  },
+		await sincronizarAgenda.run({
+			profesionalId: appsmith.URL.queryParams.id,
+			agenda: agendaProcesada
+		});
 
-  // Función que calcula la diferencia entre lo actual y lo original
-  getDetalleCambios() {
-    const originales = this.agendaOriginal;
-    const actuales = this.agenda;
-
-    const nuevos = actuales.filter(a =>
-      String(a.id).startsWith("nuevo_")
-    );
-
-    const eliminados = originales.filter(o =>
-      !actuales.some(a => a.id == o.id)
-    );
-
-    const editados = actuales.filter(a => {
-      const original = originales.find(o => o.id == a.id);
-      // Si no existe o es nuevo, no es un "editado"
-      if (!original || String(a.id).startsWith("nuevo_")) return false;
-      // Comparamos si hubo cambios reales en los datos
-      return JSON.stringify(original) !== JSON.stringify(a);
-    });
-
-    return [
-      ...nuevos.map(n => ({ tipo: "nuevo", data: n })),
-      ...eliminados.map(e => ({ tipo: "eliminado", data: e })),
-      ...editados.map(ed => ({ tipo: "editado", data: ed })),
-    ];
-  },
-
-  // Guarda en la base de datos
-  async onSubmit() {
-    const cambios = this.getDetalleCambios();
-    
-    if (cambios.length === 0) {
-      showAlert("No hay cambios detectados para guardar", "warning");
-      return;
-    }
-
-    const agendaProcesada = this.agenda.map(a => {
-      if (String(a.id).startsWith("nuevo_")) {
-        const { id, ...rest } = a; // Quitamos el ID temporal
-        return rest;
-      }
-      return a;
-    });
-
-    await sincronizarAgenda.run({
-      profesionalId: appsmith.URL.queryParams.id,
-      agenda: agendaProcesada
-    });
-
-    showAlert("Cambios guardados correctamente", "success");
-
-    // Actualizamos el original para que la tabla se considere "limpia"
-    this.agendaOriginal = JSON.parse(JSON.stringify(this.agenda));
-  }
-};
+		showAlert("Base de datos actualizada", "success");
+		await configurarAgenda.init(); // Recargamos todo
+	}
+}

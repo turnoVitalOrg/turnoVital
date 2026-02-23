@@ -18,6 +18,10 @@
       {
         "name": "dias",
         "value": "[{\n  value: \"lunes\",\n  label: \"Lunes\"\n}, {\n  value: \"martes\",\n  label: \"Martes\"\n}, {\n  value: \"miercoles\",\n  label: \"Miercoles\"\n}, {\n  value: \"jueves\",\n  label: \"Jueves\"\n}, {\n  value: \"viernes\",\n  label: \"Viernes\"\n}, {\n  value: \"sabado\",\n  label: \"Sabado\"\n}, {\n  value: \"domingo\",\n  label: \"Domingo\"\n}]"
+      },
+      {
+        "name": "hayCambios",
+        "value": "false"
       }
     ]
   }

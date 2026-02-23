@@ -40,7 +40,7 @@
     "profesional_id",
     "estado"
   ],
-  "columnUpdatedAt": 1771849725988,
+  "columnUpdatedAt": 1771857467312,
   "columnWidthMap": {
     "BillingAddress": 212,
     "CustomerID": 93,
@@ -118,6 +118,9 @@
       "key": "primaryColumns.id.computedValue"
     },
     {
+      "key": "tableData"
+    },
+    {
       "key": "primaryColumns.fecha_creacion.computedValue"
     },
     {
@@ -125,9 +128,6 @@
     },
     {
       "key": "primaryColumns.estado.computedValue"
-    },
-    {
-      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -227,7 +227,7 @@
       "label": "Eliminar",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{configurarAgenda.onDelete('currentRow.id');}}",
+      "onClick": "{{configurarAgenda.onDelete(currentRow.id);}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
@@ -296,8 +296,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "Estado",
+      "isVisible": true,
+      "label": "estado",
       "notation": "standard",
       "originalId": "estado",
       "sticky": "",
@@ -322,7 +322,7 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "fecha_creacion",
-      "index": 1,
+      "index": 4,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -330,8 +330,8 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "Fecha de creación",
+      "isVisible": true,
+      "label": "fecha_creacion",
       "notation": "standard",
       "originalId": "fecha_creacion",
       "sticky": "",
@@ -472,7 +472,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "profesional_id",
       "notation": "standard",
       "originalId": "profesional_id",
@@ -490,7 +490,7 @@
   "searchKey": "",
   "serverSidePaginationEnabled": true,
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{configurarAgenda.agenda}}",
+  "tableData": "{{ configurarAgenda.agenda }}",
   "textSize": "0.875rem",
   "topRow": 79,
   "totalRecordsCount": "",
