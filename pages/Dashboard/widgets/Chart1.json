@@ -6,12 +6,12 @@
   "bottomRow": 70,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
-    "0i3boe2mt4": {
-      "data": "{{turnosPorMes.data.map( (obj) =>{ return  {'x': obj.month, 'y': obj.turnos_no_asistidos } })}}",
+    "b9rmzm3zl6": {
+      "data": "{{\n  turnosPorMes.data.map((obj) => {\n    const fecha = new Date(obj.month + 'T00:00:00');\n    const nombreMes = fecha.toLocaleString('es-ES', { month: 'long' });\n    \n    return {\n      'x': nombreMes.charAt(0).toUpperCase() + nombreMes.slice(1), \n      'y': obj.turnos_asistidos \n    }\n  })\n}}",
       "seriesName": "Asistidos"
     },
     "fj1ucnha3g": {
-      "data": "{{turnosPorMes.data.map( (obj) =>{ return  {'x': obj.month, 'y': obj.turnos_no_asistidos } })}}",
+      "data": "{{\n  turnosPorMes.data.map((obj) => {\n    // Esto convierte \"2026-01-01\" en \"Enero\" directamente en el gráfico\n    const fecha = new Date(obj.month + 'T00:00:00'); \n    const nombreMes = fecha.toLocaleString('es-ES', { month: 'long' });\n    \n    return {\n      'x': nombreMes.charAt(0).toUpperCase() + nombreMes.slice(1), \n      'y': obj.turnos_no_asistidos \n    }\n  })\n}}",
       "seriesName": "No asistidos"
     }
   },
@@ -67,9 +67,6 @@
   },
   "dynamicBindingPathList": [
     {
-      "key": "chartData.0i3boe2mt4.data"
-    },
-    {
       "key": "borderRadius"
     },
     {
@@ -86,8 +83,12 @@
     },
     {
       "key": "chartData.fj1ucnha3g.data"
+    },
+    {
+      "key": "chartData.b9rmzm3zl6.data"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
