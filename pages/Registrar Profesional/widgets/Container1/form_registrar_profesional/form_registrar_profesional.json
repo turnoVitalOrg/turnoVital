@@ -4,7 +4,7 @@
   "borderColor": "transparent",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 55,
+  "bottomRow": 56,
   "boxShadow": "none",
   "children": [
     {
@@ -49,21 +49,21 @@
   "isLoading": false,
   "isVisible": true,
   "key": "6qmrdocnf5",
-  "leftColumn": 3,
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
-  "originalBottomRow": 55,
-  "originalTopRow": 0,
+  "originalBottomRow": 56,
+  "originalTopRow": 1,
   "parentColumnSpace": 17.9375,
   "parentId": "uplwrhu2gr",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "searchTags": [
     "group"
   ],
   "shouldScrollContents": true,
-  "topRow": 0,
+  "topRow": 1,
   "type": "FORM_WIDGET",
   "widgetId": "maaqfvs52n",
   "widgetName": "form_registrar_profesional"

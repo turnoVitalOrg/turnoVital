@@ -3,7 +3,7 @@
   "allowAddNewRow": true,
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 110,
+  "bottomRow": 111,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "cellBackground": "{{appsmith.theme.colors.backgroundColor}}",
@@ -40,7 +40,7 @@
     "profesional_id",
     "estado"
   ],
-  "columnUpdatedAt": 1764632819417,
+  "columnUpdatedAt": 1771849725988,
   "columnWidthMap": {
     "BillingAddress": 212,
     "CustomerID": 93,
@@ -85,9 +85,6 @@
       "key": "boxShadow"
     },
     {
-      "key": "tableData"
-    },
-    {
       "key": "primaryColumns.customColumn1.boxShadow"
     },
     {
@@ -128,6 +125,9 @@
     },
     {
       "key": "primaryColumns.estado.computedValue"
+    },
+    {
+      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -184,8 +184,8 @@
   "label": "Data",
   "leftColumn": 1,
   "onAddNewRowSave": "{{configurarAgenda.onSave(TablaAgenda.newRow);}}",
-  "onPageChange": "{{utils.getCustomers()}}",
-  "onPageSizeChange": "{{utils.getCustomers()}}",
+  "onPageChange": "",
+  "onPageSizeChange": "",
   "onRowSelected": "",
   "originalBottomRow": 111,
   "originalTopRow": 79,
@@ -227,7 +227,7 @@
       "label": "Eliminar",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{configurarAgenda.onDelete(currentRow.id);}}",
+      "onClick": "{{configurarAgenda.onDelete('currentRow.id');}}",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
@@ -330,7 +330,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": true,
+      "isVisible": false,
       "label": "Fecha de creación",
       "notation": "standard",
       "originalId": "fecha_creacion",
@@ -490,9 +490,9 @@
   "searchKey": "",
   "serverSidePaginationEnabled": true,
   "showInlineEditingOptionDropdown": true,
-  "tableData": "{{ configurarAgenda.agenda }}",
+  "tableData": "{{configurarAgenda.agenda}}",
   "textSize": "0.875rem",
-  "topRow": 78,
+  "topRow": 79,
   "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT3",

@@ -1,16 +1,12 @@
 {
-  "gitSyncId": "68fc13c2d7e1a24929454f2f_efcfe206-882a-4ad5-9572-529805071174",
-  "id": "Modificar Profesional_configurarAgenda.onDelete",
+  "gitSyncId": "69382fd0b4cafe762e95dab1_43b7d680-0bf9-4217-97a8-b49d63805f07",
+  "id": "Modificar Profesional_configurarAgenda.getCambiosParaExportar",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [
-        {
-          "name": "id"
-        }
-      ],
+      "jsArguments": [],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -26,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "configurarAgenda.onDelete",
-    "name": "onDelete",
+    "fullyQualifiedName": "configurarAgenda.getCambiosParaExportar",
+    "name": "getCambiosParaExportar",
     "pageId": "Modificar Profesional",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

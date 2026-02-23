@@ -1,17 +1,23 @@
 export default {
+
   downloadAgendaPDF: async () => {
     try {
-      const agenda = configurarAgenda.agenda;
 
-      if (!agenda || agenda.length === 0) {
-        showAlert("No hay datos de agenda para este profesional", "warning");
+      const cambios = configurarAgenda.getCambiosParaExportar();
+
+      if (!cambios || cambios.length === 0) {
+        showAlert("No hay cambios para exportar", "warning");
         return;
       }
 
       const nombreProfesional = loadInitialData.persona?.nombre ?? "";
       const apellidoProfesional = loadInitialData.persona?.apellido ?? "";
 
-      await agendaPDF.generatePDF(agenda, nombreProfesional, apellidoProfesional);
+      await agendaPDF.generatePDF(
+        cambios,
+        nombreProfesional,
+        apellidoProfesional
+      );
 
     } catch (e) {
       console.error("Error al generar PDF:", e);
@@ -19,68 +25,74 @@ export default {
     }
   },
 
-  generatePDF: async (agendaData, nombreProfesional, apellidoProfesional) => {
+  generatePDF: async (cambiosData, nombreProfesional, apellidoProfesional) => {
+
     const doc = new jspdf.jsPDF();
 
-    // Colores usados (mismos que Informe Turnos)
-    const primary = [119, 181, 37]; 
+    const formatearHora = (hora) => {
+      if (!hora) return "";
+      return hora.split(":").slice(0, 2).join(":");
+    };
+
+    const primary = [119, 181, 37];
     const text = [35, 31, 32];
     const gray = [113, 110, 110];
 
-    // ---- ENCABEZADO ----
+    // ENCABEZADO
     doc.setFontSize(24);
     doc.setTextColor(...text);
-    doc.text("Agenda del Profesional", 105, 20, { align: "center" });
+    doc.text("Cambios en Agenda del Profesional", 105, 20, { align: "center" });
 
     doc.setFontSize(14);
     doc.setTextColor(...primary);
     doc.text(`${nombreProfesional} ${apellidoProfesional}`, 105, 28, { align: "center" });
 
-    // Fecha
     const fecha = new Date().toLocaleDateString("es-AR");
     doc.setFontSize(10);
     doc.setTextColor(...gray);
     doc.text(`Generado el ${fecha}`, 105, 34, { align: "center" });
 
-    // Línea separadora
     doc.setDrawColor(...primary);
     doc.setLineWidth(0.7);
     doc.line(20, 38, 190, 38);
 
-    // ---- TABLA ----
     let y = 50;
 
-    doc.setFontSize(16);
-    doc.setTextColor(...primary);
-    doc.text("Horarios", 20, y);
-    y += 10;
+    const imprimirEncabezadoTabla = () => {
 
-    doc.setFontSize(12);
-    doc.setTextColor(...text);
-    doc.setFont(undefined, "bold");
+      doc.setFontSize(12);
+      doc.setTextColor(...text);
+      doc.setFont(undefined, "bold");
 
-    doc.text("Día", 20, y);
-    doc.text("Inicio", 80, y);
-    doc.text("Fin", 130, y);
-
-    y += 7;
-    doc.setFont(undefined, "normal");
-
-    agendaData.forEach(item => {
-      doc.text(item.dia_semana || item.dia || "", 20, y);
-      doc.text(item.hora_inicio || "", 80, y);
-      doc.text(item.hora_fin || "", 130, y);
+      doc.text("Tipo", 20, y);
+      doc.text("Día", 50, y);
+      doc.text("Inicio", 100, y);
+      doc.text("Fin", 140, y);
 
       y += 7;
+      doc.setFont(undefined, "normal");
+    };
 
-      // Agregar nueva página si se llena
-      if (y > 280) {
+    imprimirEncabezadoTabla();
+
+    cambiosData.forEach(cambio => {
+
+      if (y > 270) {
         doc.addPage();
         y = 20;
+        imprimirEncabezadoTabla();
       }
+
+      const row = cambio.data;
+
+      doc.text(cambio.tipo.toUpperCase(), 20, y);
+      doc.text(row.dia_semana || row.dia || "", 50, y);
+      doc.text(formatearHora(row.hora_inicio), 100, y);
+      doc.text(formatearHora(row.hora_fin), 140, y);
+
+      y += 7;
     });
 
-    // ---- FOOTER ----
     const pages = doc.internal.getNumberOfPages();
 
     for (let i = 1; i <= pages; i++) {
@@ -92,8 +104,9 @@ export default {
       doc.text("TurnoVital - Sistema de Gestión de Turnos", 105, 293, { align: "center" });
     }
 
-    // Guardar archivo
-    const fileName = `Agenda_${nombreProfesional}_${apellidoProfesional}_${new Date().toISOString().split("T")[0]}.pdf`;
+    const fechaArchivo = new Date().toISOString().split("T")[0];
+    const fileName = `Cambios_Agenda_${nombreProfesional}_${apellidoProfesional}_${fechaArchivo}.pdf`;
+
     const pdfData = doc.output("datauristring");
     download(pdfData, fileName, "application/pdf");
   }

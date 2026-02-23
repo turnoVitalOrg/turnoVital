@@ -11,7 +11,7 @@
           "value": "text/plain"
         }
       ],
-      "body": "{{\n{\n\tp_profesional_id: this.params.profesionalId,\n\tp_agendas: this.params.agenda\n}\n}}",
+      "body": "{{\n{\n  p_profesional_id: this.params.profesionalId,\n  p_agendas: this.params.agenda\n}\n}}",
       "bodyFormData": [],
       "encodeParamsToggle": true,
       "formData": {
