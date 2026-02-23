@@ -7,7 +7,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartData": {
     "0i3boe2mt4": {
-      "data": "{{turnosPorMes.data.map( (obj) =>{ return  {'x': obj.month, 'y': obj.turnos_asistidos } })}}",
+      "data": "{{turnosPorMes.data.map( (obj) =>{ return  {'x': obj.month, 'y': obj.turnos_no_asistidos } })}}",
       "seriesName": "Asistidos"
     },
     "fj1ucnha3g": {
@@ -108,7 +108,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 61,
+  "rightColumn": 60,
   "setAdaptiveYMin": true,
   "showDataPointLabel": true,
   "topRow": 26,

@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 8,
   "boxShadow": "none",
-  "defaultOptionValue": "Enero 2025",
+  "defaultOptionValue": "Enero 2026",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -50,7 +50,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 22,
   "serverSideFiltering": false,
-  "sourceData": "[\n  { \"name\": \"Enero 2025\", \"code\": \"Enero 2025\" },\n  { \"name\": \"Febrero 2025\", \"code\": \"Febrero 2025\" },\n  { \"name\": \"Marzo 2025\", \"code\": \"Marzo 2025\" },\n  { \"name\": \"Abril 2025\", \"code\": \"Abril 2025\" },\n  { \"name\": \"Mayo 2025\", \"code\": \"Mayo 2025\" },\n  { \"name\": \"Junio 2025\", \"code\": \"Junio 2025\" },\n  { \"name\": \"Julio 2025\", \"code\": \"Julio 2025\" },\n  { \"name\": \"Agosto 2025\", \"code\": \"Agosto 2025\" },\n  { \"name\": \"Septiembre 2025\", \"code\": \"Septiembre 2025\" },\n  { \"name\": \"Octubre 2025\", \"code\": \"Octubre 2025\" },\n  { \"name\": \"Noviembre 2025\", \"code\": \"Noviembre 2025\" },\n  { \"name\": \"Diciembre 2025\", \"code\": \"Diciembre 2025\" },\n  { \"name\": \"Enero 2026\", \"code\": \"Enero 2026\" },\n  { \"name\": \"Febrero 2026\", \"code\": \"Febrero 2026\" },\n  { \"name\": \"Marzo 2026\", \"code\": \"Marzo 2026\" },\n  { \"name\": \"Abril 2026\", \"code\": \"Abril 2026\" },\n  { \"name\": \"Mayo 2026\", \"code\": \"Mayo 2026\" },\n  { \"name\": \"Junio 2026\", \"code\": \"Junio 2026\" }\n]\n",
+  "sourceData": "[\n  { \"name\": \"Enero 2026\", \"code\": \"Enero 2026\" },\n  { \"name\": \"Febrero 2026\", \"code\": \"Febrero 2026\" },\n  { \"name\": \"Marzo 2026\", \"code\": \"Marzo 2026\" },\n  { \"name\": \"Abril 2026\", \"code\": \"Abril 2026\" },\n  { \"name\": \"Mayo 2026\", \"code\": \"Mayo 2026\" },\n  { \"name\": \"Junio 2026\", \"code\": \"Junio 2026\" },\n  { \"name\": \"Julio 2026\", \"code\": \"Julio 2026\" },\n  { \"name\": \"Agosto 2026\", \"code\": \"Agosto 2026\" },\n  { \"name\": \"Septiembre 2026\", \"code\": \"Septiembre 2026\" },\n  { \"name\": \"Octubre 2026\", \"code\": \"Octubre 2026\" }\n\t,\n  { \"name\": \"Noviembre 2026\", \"code\": \"Noviembre 2026\" },\n  { \"name\": \"Diciembre 2026\", \"code\": \"Diciembre 2026\" }\n]\n",
   "topRow": 1,
   "type": "SELECT_WIDGET",
   "version": 1,
